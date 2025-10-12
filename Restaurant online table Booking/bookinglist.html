@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Bookings - Royal Dine</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+  <header>
+    <h1> Current Bookings</h1>
+    <p>Here’s a list of all reserved tables at Royal Dine Restaurant.</p>
+  </header>
+
+  <section class="container">
+    <div class="booking-list" style="width: 80%;">
+      <h2>Current Reservations</h2>
+      <ul id="bookings"></ul>
+
+      <button onclick="window.location.href='booking.html'" class="view-bookings-btn">
+        ⬅️ Back to Booking Page
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Royal Dine</p>
+  </footer>
+
+  <script>
+    const bookingsList = document.getElementById("bookings");
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    function renderBookings() {
+      bookingsList.innerHTML = "";
+
+      if (bookings.length === 0) {
+        bookingsList.innerHTML = "<p>No bookings available.</p>";
+        return;
+      }
+
+      bookings.forEach((booking, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>
+            ${booking.name} - ${booking.date} ${booking.time}
+            (${booking.guests} guests, Tables: ${booking.tablesReserved})
+          </span>
+          <button class="cancel-btn" data-index="${index}">Cancel</button>
+        `;
+        bookingsList.appendChild(li);
+      });
+
+      document.querySelectorAll(".cancel-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const index = parseInt(e.target.dataset.index, 10);
+
+          Swal.fire({
+            title: "Cancel this booking?",
+            text: "Are you sure you want to cancel this reservation?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, cancel it!",
+            cancelButtonText: "No, keep it"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              bookings.splice(index, 1);
+              localStorage.setItem("bookings", JSON.stringify(bookings));
+              renderBookings();
+
+              Swal.fire({
+                icon: "success",
+                title: "Cancelled!",
+                text: "Your booking has been successfully cancelled.",
+                confirmButtonColor: "#ff7043"
+              });
+            }
+          });
+        });
+      });
+    }
+
+    renderBookings();
+  </script>
+</body>
+</html>

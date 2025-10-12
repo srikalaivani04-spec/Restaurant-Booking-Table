@@ -1,0 +1,226 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #fff8f3;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ff7043, #ff9800);
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  animation: fadeIn 1s ease-in;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.booking-form, .booking-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-width: 320px;
+  transition: transform 0.3s;
+  height: fit-content;
+}
+
+.booking-form:hover, .booking-list:hover {
+  transform: translateY(-4px);
+}
+
+.booking-form h2, .booking-list h2 {
+  color: #ff7043;
+  margin-bottom: 1rem;
+}
+
+#bookingtable{
+    width:50%;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+.booking-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.booking-list li {
+  background: #fff3e0;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.cancel-btn {
+  background: #ff5252;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  background: #d32f2f;
+}
+
+.availability {
+  margin-top: 20px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.table-layout {
+  margin-top: 20px;
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* .table {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: default;
+} */
+
+.table {
+  border: 2px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: #f0f0f0;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* .table.available {
+  background-color: #a5d6a7;
+}
+
+.table.reserved {
+  background-color: #ef9a9a;
+  color: white;
+} */
+
+.table.available {
+  background-color: #d1f7d6; /* light green */
+}
+
+.table.reserved {
+  background-color: #f6b6b6; /* light red */
+}
+
+.table:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ff7043;
+  color: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.view-bookings-btn {
+  margin-top: 15px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-bookings-btn:hover {
+  background-color: #e68900;
+}
+
+/* Header styling */
+.header {
+  position: relative;
+  text-align: center; /* Centers the heading & subtitle */
+  padding: 2rem;
+  background: linear-gradient(135deg, #ff7043, #ff9800);
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* Position the button in top-right */
+.header .home-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.header .home-btn:hover {
+  background-color: #e64a19;
+}
