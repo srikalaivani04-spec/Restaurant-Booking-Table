@@ -1,2 +1,2 @@
-# Restaurant-Booking-Table
-In this the table can be booked via online. It is User friendly environment.
+# single page application
+student edu dashboard. It is User friendly environment.
