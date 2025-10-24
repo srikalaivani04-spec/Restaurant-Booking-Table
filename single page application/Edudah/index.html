@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduDash – Student Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <h1>🎓 EduDash</h1>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="home">Home</a></li>
+        <li><a href="#" data-section="courses">Courses</a></li>
+        <li><a href="#" data-section="progress">Progress</a></li>
+        <li><a href="#" data-section="profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- Home Section -->
+    <section id="home" class="active">
+      <h2>Welcome to EduDash 👋</h2>
+      <p>Your all-in-one dashboard to track your learning journey!</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Active Courses</h3>
+          <p>View your enrolled courses and continue learning.</p>
+        </div>
+        <div class="card">
+          <h3>Performance</h3>
+          <p>Check your progress and achievements.</p>
+        </div>
+        <div class="card">
+          <h3>Profile</h3>
+          <p>Update your details and preferences.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+      <h2>📘 My Courses</h2>
+      <div id="courseList" class="course-list"></div>
+
+      <form id="addCourseForm">
+        <input type="text" id="courseName" placeholder="Add new course..." required />
+        <button type="submit">Add Course</button>
+      </form>
+    </section>
+
+    <!-- Progress Section -->
+    <section id="progress">
+      <h2>📈 Learning Progress</h2>
+      <div id="progressContainer"></div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile">
+      <h2>👤 Student Profile</h2>
+      <form id="profileForm">
+        <label>Name:</label>
+        <input type="text" id="studentName" placeholder="Enter your name" required />
+
+        <label>Email:</label>
+        <input type="email" id="studentEmail" placeholder="Enter your email" required />
+
+        <label>College:</label>
+        <input type="text" id="studentCollege" placeholder="Enter your college" required />
+
+        <button type="submit">Save Profile</button>
+      </form>
+      <div id="profileInfo"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 EduDash | Built for Naan Mudhalvan Project 💻</p>
+  </footer>
+</body>
+</html>
+
